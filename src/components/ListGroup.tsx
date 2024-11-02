@@ -8,7 +8,7 @@ function ListGroup({ items, heading, onSelecItem }: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
-    <>
+    <div id="list-group">
       <h1>{heading}</h1>
       {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
@@ -29,7 +29,7 @@ function ListGroup({ items, heading, onSelecItem }: ListGroupProps) {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 

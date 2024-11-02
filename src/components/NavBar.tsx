@@ -6,10 +6,24 @@ interface NavBarProps {
 
 function NavBar({ heading }: NavBarProps) {
   const [theme, setTheme] = useState("light");
+  const [moon, setMoon] = useState("svg/moon.svg");
+  const [sun, setSun] = useState("svg/brightness-high.svg");
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     document.getElementById("navigen")?.setAttribute("data-bs-theme", newTheme);
     setTheme(newTheme);
+    const newMoon =
+      moon === "svg/moon.svg" ? "svg/moon-fill.svg" : "svg/moon.svg";
+    let M = document.getElementById("moon") as HTMLImageElement;
+    M.src = newMoon;
+    setMoon(newMoon);
+    const newSun =
+      sun === "svg/brightness-high.svg"
+        ? "svg/brightness-high-fill.svg"
+        : "svg/brightness-high.svg";
+    let S = document.getElementById("sun") as HTMLImageElement;
+    S.src = newSun;
+    setSun(newSun);
   };
   return (
     <>
@@ -72,15 +86,36 @@ function NavBar({ heading }: NavBarProps) {
                   </li>
                 </ul>
               </li>
-              <div className="form-check form-switch">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  role="switch"
-                  style={{ marginTop: 12 + "px" }}
-                  id="switch"
-                  onClick={toggleTheme}
-                ></input>
+              <div>
+                <img
+                  src="svg\moon.svg"
+                  alt="moon"
+                  style={{ marginTop: 12 + "px", float: "right" }}
+                  id="moon"
+                />
+                <div
+                  className="form-check form-switch"
+                  style={{ float: "right" }}
+                >
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    style={{ marginTop: 12 + "px" }}
+                    id="switch"
+                    onClick={toggleTheme}
+                  ></input>
+                </div>
+                <img
+                  src="svg/brightness-high.svg"
+                  alt="sun"
+                  style={{
+                    marginTop: 12 + "px",
+                    float: "right",
+                    marginRight: 6 + "px",
+                  }}
+                  id="sun"
+                />
               </div>
             </ul>
             <form className="d-flex" role="search">
