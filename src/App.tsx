@@ -1,10 +1,11 @@
 import ListGroup from "./components/ListGroup";
 import NavBar from "./components/NavBar";
 import { useEffect } from "react";
-import { Info } from "./components/Info";
 function App() {
   let items = ["Warszawa", "Kraków", "Rybnik", "Katowice", "Wrocław"];
-  const handleSelecItem = (item: string) => {};
+  const handleSelecItem = (item: string) => {
+    console.log(item);
+  };
   useEffect(() => {
     document.title = "Strona główna";
   });
