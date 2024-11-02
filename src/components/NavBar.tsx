@@ -88,7 +88,7 @@ function NavBar({ heading }: NavBarProps) {
               </li>
               <div>
                 <img
-                  src="svg\moon.svg"
+                  src="./svg/moon.svg"
                   alt="moon"
                   style={{ marginTop: 12 + "px", float: "right" }}
                   id="moon"
