@@ -1,12 +1,10 @@
 import ListGroup from "./components/ListGroup";
 import NavBar from "./components/NavBar";
 import { useEffect } from "react";
+import { Info } from "./components/Info";
 function App() {
   let items = ["Warszawa", "Kraków", "Rybnik", "Katowice", "Wrocław"];
-  const handleSelecItem = (item: string) => {
-    if (item === "Katowice")
-      window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-  };
+  const handleSelecItem = (item: string) => {};
   useEffect(() => {
     document.title = "Strona główna";
   });
@@ -15,7 +13,7 @@ function App() {
       <NavBar heading="Mocna strona"></NavBar>
       <ListGroup
         items={items}
-        heading="Cities"
+        heading="Miasta"
         onSelecItem={handleSelecItem}
       ></ListGroup>
     </div>

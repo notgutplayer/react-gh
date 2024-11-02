@@ -8,7 +8,7 @@ function ListGroup({ items, heading, onSelecItem }: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
     <div id="list-group" style={{ backgroundColor: "#f8f9fa" }}>
-      <h1>{heading}</h1>
+      <h1 style={{ textAlign: "center" }}>{heading}</h1>
       {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
         {items.map((item, index) => (
@@ -23,6 +23,7 @@ function ListGroup({ items, heading, onSelecItem }: ListGroupProps) {
               setSelectedIndex(index);
               onSelecItem(item);
             }}
+            style={{ textAlign: "center" }}
           >
             {item}
           </li>
