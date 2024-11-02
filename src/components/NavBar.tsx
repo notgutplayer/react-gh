@@ -8,6 +8,8 @@ function NavBar({ heading }: NavBarProps) {
   const [theme, setTheme] = useState("light");
   const [moon, setMoon] = useState("svg/moon.svg");
   const [sun, setSun] = useState("svg/brightness-high.svg");
+  const [list, setList] = useState("#f8f9fa");
+  const [font, setFont] = useState("black");
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     document.getElementById("navigen")?.setAttribute("data-bs-theme", newTheme);
@@ -24,6 +26,12 @@ function NavBar({ heading }: NavBarProps) {
     let S = document.getElementById("sun") as HTMLImageElement;
     S.src = newSun;
     setSun(newSun);
+    const newList = list === "#f8f9fa" ? "2b3035" : "#f8f9fa";
+    const newFont = font === "black" ? "white" : "black";
+    let color = "background-color: " + "#" + newList + "; color: " + newFont;
+    document.getElementById("list-group")?.setAttribute("style", color);
+    setList(newList);
+    setFont(newFont);
   };
   return (
     <>
@@ -88,7 +96,7 @@ function NavBar({ heading }: NavBarProps) {
               </li>
               <div>
                 <img
-                  src="../svg/moon.SVG"
+                  src="svg/moon.SVG"
                   alt="moon"
                   style={{ marginTop: 12 + "px", float: "right" }}
                   id="moon"

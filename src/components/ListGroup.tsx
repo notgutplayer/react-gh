@@ -6,9 +6,8 @@ interface ListGroupProps {
 }
 function ListGroup({ items, heading, onSelecItem }: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
-
   return (
-    <div id="list-group">
+    <div id="list-group" style={{ backgroundColor: "#f8f9fa" }}>
       <h1>{heading}</h1>
       {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
